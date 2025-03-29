@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Демонстрация сайта</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1><a href="https://welcome-stasic.github.io/Second_day/">Перейти на
+            сайт</a></h1>
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <div class="img">
+                <img src="assets/прелоадер.png" style="width:90vw;">
+            </div>
+            <div class="text">На сайте есть прелоадер который отлично
+                дополняет сайта</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="img">
+                <img src="assets/главная.png" style="width:90vw;">
+            </div>
+            <div class="text">После загрузки сайта вас встречает моё имяс
+                кнопкой перехода в профиль</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="img">
+                <img src="assets/профиль.png" style="width:90vw;">
+            </div>
+            <div class="text">В профиле вы можете ознакомиться со мной и моими
+                наградами</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="img">
+                <img src="assets/баллы.png" style="width:90vw;">
+            </div>
+            <div class="text">Пролистав ниже вы можете ознакомиться с моими
+                упеваниями в учёбе</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="img">
+                <img src="assets/калькулятор.png" style="width:90vw;">
+            </div>
+            <div class="text">Как вы могли заметить есть кнопка "калькулятор"
+                нажав у вас открываеться шикарный калькулятор с новейшим
+                функционалом</div>
+        </div>
+        <a class="prev" onclick="slide(-1); showSlides()">&#10094;</a>
+        <a class="next" onclick="slide(1); showSlides()">&#10095;</a>
+    </div>
+    <script>
+        var slideIndex = 0;
+        var slideTimer;
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            if (slideIndex >= slides.length) {
+                slideIndex = 0
+            }
+            if (slideIndex < 0) {
+                slideIndex = slides.length - 1
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex].style.display = "block";
+            slideTimer = setTimeout(function() {
+                slide(1);
+                slide();
+            }, 10000);
+        }
+        showSlides();
+        function slide(n) {
+            clearTimeout(slideTimer);
+            slideIndex += n;
+        }
+    </script>
+</body>
+</html>
